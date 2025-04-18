@@ -1,1 +1,38 @@
-venv/
+# ---- Python & Django basics ----
+__pycache__/
+*.py[cod]
+*.so
+*.log
+
+# Development database
+db.sqlite3
+db.sqlite3-journal
+
+# Virtual envs (already have venv/, but catch other names)
+.env/
+.venv/
+ENV/
+
+# User‑uploaded media
+media/
+
+# Collected static (if you set STATIC_ROOT=staticfiles/)
+staticfiles/
+
+# Test / coverage caches
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# Type‑check / lint caches
+.mypy_cache/
+.ruff_cache/
+
+# Secrets & runtime config
+.env
+
+# IDE / OS clutter
+.vscode/
+.idea/
+.ropeproject/
+.DS_Store
