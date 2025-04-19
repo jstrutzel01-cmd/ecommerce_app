@@ -24,6 +24,12 @@ class Product(models.Model):
     images = models.ImageField(upload_to="products/",blank=True)
     created_at = models.DateField(auto_now_add=True) #Creates data field only when instance is created
     updated_at = models.DateField(auto_now=True) #Updates the date field after save
+    GENDER_CHOICES = [
+        ("M", "Men"),
+        ("W", "Women"),
+        ("U", "Unisex"),
+    ]
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default="U")
 
     class Meta:
         ordering = ["name"]
