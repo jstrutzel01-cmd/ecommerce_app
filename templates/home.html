@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Ecommerce App{% endblock %}
+
+{% block content %}
+<section style="text-align:center;">
+  <h2>New Spring Collection</h2>
+  <p><a href="{% url 'product_list' %}">Browse all products →</a></p>
+</section>
+{% endblock %}

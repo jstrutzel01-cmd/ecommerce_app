@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Fashion Shop{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+  <header>
+    <h1><a href="{% url 'home' %}">Fashion Shop</a></h1>
+
+    <!-- category menu will be filled by a context‑processor in step 2 -->
+    <nav>
+      {% for cat in categories %}
+        <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+      {% endfor %}
+      <a href="{% url 'cart:view' %}">Cart ({{ cart|length }})</a>
+    </nav>
+  </header>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer>&copy; 2025 Fashion Shop</footer>
+</body>
+</html>
