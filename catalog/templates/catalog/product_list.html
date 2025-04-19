@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{% if category %}{{category.name}} |{% endif %} Products{% endblock %}
+
+{% block content %}
+<h2>{% if category %}{{category.name }}{% else %} All Products{% endif %}</h2>
+
+{% for product in products %}
+    <div class="product">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="120">
+        {% endif %}
+        <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
+        <p>${{ product.price }}</p>
+    </div>
+{% empty %}
+    <p>No Prodcuts found.</p>
+{% endfor %}
+
