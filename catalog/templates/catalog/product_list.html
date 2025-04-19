@@ -18,10 +18,10 @@
 
 <!--simple pagination-->
 <div>
-    {% if products.has_previous % }
+    {% if products.has_previous %}
         <a href="?page={{ products.previous_page_number }}"> Prev</a>
     {% endif %}
-    Page {{ prodcuts.number }} of {{ prodcuts.paginator.num_pages }}
+    Page {{ products.number }} of {{ products.paginator.num_pages }}
     {% if products.has_next %}
         <a href="?page={{ products.next_page_number }}">Next </a>
     {% endif %}

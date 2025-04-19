@@ -1,0 +1,18 @@
+{% extends "base.html %}
+{% block title %}{{ product.name }} | Ecommerce_App{% endblock %}
+
+{% block content %}
+<article> <!--article tag is good for single item/page. I didn't know this.-->
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="240">
+    {% endif %}
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.price }}</p>
+    <p>{{ product.description }}</p>
+
+    <form action="{% url 'cart:add product.id %}" method="post"> <!--Use POST because we are modifying data.-->
+        {% csrf_token %}
+        <button>Add to Cart</button>
+    </form>
+</article>
+{% endblock %}
