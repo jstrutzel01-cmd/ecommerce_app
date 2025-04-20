@@ -22,7 +22,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=110, unique=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    images = models.ImageField(upload_to="products/",blank=True)
+    image = models.ImageField(upload_to="products/",blank=True)
     created_at = models.DateField(auto_now_add=True) #Creates data field only when instance is created
     updated_at = models.DateField(auto_now=True) #Updates the date field after save
     GENDER_CHOICES = [

@@ -14,7 +14,7 @@ db.sqlite3-journal
 ENV/
 
 # User‑uploaded media
-media/
+#media/
 
 # Collected static (if you set STATIC_ROOT=staticfiles/)
 staticfiles/

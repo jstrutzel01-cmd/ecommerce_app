@@ -1,4 +1,4 @@
-{% extends "base.html %}
+{% extends "base.html" %}
 {% block title %}{{ product.name }} | Ecommerce_App{% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     <p>{{ product.price }}</p>
     <p>{{ product.description }}</p>
 
-    <form action="{% url 'cart:add product.id %}" method="post"> <!--Use POST because we are modifying data.-->
+    <form action="{% url 'cart:add' product.id %}" method="post"> <!--Use POST because we are modifying data.-->
         {% csrf_token %}
         <label>Size:</label>
         <select name="size">
