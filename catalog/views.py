@@ -5,7 +5,7 @@ from .models import Product, Category
 def product_list(request, category_slug=None):
     category = None # This line will be overrided if slug is passed
     products = Product.objects.all()
-    
+
     if (category_slug): # Function happens if category_slug is passed
         category = Category.objects.get(slug=category_slug) # Mathches category_slug to slug in DB
         products = products.filter(category=category)

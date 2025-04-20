@@ -17,14 +17,16 @@ class Cart:
         self.cart = cart
 
     # --- core API ---
-    def add(self, product, qty=1, override=False):
+    def add(self, product, qty=1, override=False, size=None):
         product_id = str(product.id) # keys in session must be strings
-        if product_id not in self.cart:
-            self.cart[product_id] = {"qty": 0, "price": str(product.price)}
+        key = f"{product_id}-{size}" if size else product_id # We cannot use product_id for adding items to cart becuse adding a new iterm with the same size will override the old one
+        
+        if key not in self.cart:
+            self.cart[key] = {"qty": 0, "price": str(product.price), "size": size}
         if override:
-            self.cart[product_id]["qty"] = qty
+            self.cart[key]["qty"] = qty
         else:
-            self.cart[product_id]["qty"] += qty
+            self.cart[key]["qty"] += qty
         self.save()
 
     def remove(self, product):

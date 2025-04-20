@@ -12,6 +12,14 @@
 
     <form action="{% url 'cart:add product.id %}" method="post"> <!--Use POST because we are modifying data.-->
         {% csrf_token %}
+        <label>Size:</label>
+        <select name="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
         <button>Add to Cart</button>
     </form>
 </article>
