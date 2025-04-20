@@ -40,14 +40,15 @@ class Cart:
         self.session.modified = True
 
     # --- helpers ---
-    def __iter__(self):
-        product_ids = self.cart.keys() # keys() returns a view of all the keys in that dictionary
-        products = Product.objects.filter(id__in=product_ids) #Use id__in to filter all ids in cart
-        for p in products:
-            item = self.cart[str(p.id)]
-            item["product"] = p
+    def __iter__(self): #this function prepares all the cart data so template can extract whatever it data it wants from each object. __iter__ is called when for loop uses cart
+        for key, item in self.cart.items():
+            product_id = key.split("-")[0]  # get just the ID from '6-XS'
+            product = Product.objects.get(id=product_id)  # gets the product from DB
+
+            item = item.copy() # Makes a copy of the cart item so it can be modified for the display, but not mess with saved session data
+            item["product"] = product # Adds the actual name from Prodcut Object
             item["total_price"] = Decimal(item["price"]) * item["qty"]
-            yield item # Return one item at a time
+            yield item
 
     def __len__(self):
         return sum(item["qty"] for item in self.cart.values())

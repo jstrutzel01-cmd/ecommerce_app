@@ -13,7 +13,7 @@ class Category(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse("product_detail", args=[self.id, self.slug]) #Returns the URL for a page that shows all products in this category
+        return reverse("product_list_by_category", args=[self.slug]) #Returns the URL for a page that shows all products in this category
 
 
 class Product(models.Model):
