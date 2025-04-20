@@ -29,10 +29,11 @@ class Cart:
             self.cart[key]["qty"] += qty
         self.save()
 
-    def remove(self, product):
+    def remove(self, product, size=None):
         product_id = str(product.id)
-        if product_id in self.cart:
-            del self.cart[product_id]
+        key = f"{product_id}-{size}" if size else product_id
+        if key in self.cart:
+            del self.cart[key]
             self.save()
 
     def clear(self):
@@ -44,9 +45,9 @@ class Cart:
         for key, item in self.cart.items():
             product_id = key.split("-")[0]  # get just the ID from '6-XS'
             product = Product.objects.get(id=product_id)  # gets the product from DB
-
+            item["size"] = key.split("-")[1] if "-" in key else None
             item = item.copy() # Makes a copy of the cart item so it can be modified for the display, but not mess with saved session data
-            item["product"] = product # Adds the actual name from Prodcut Object
+            item["product"] = product # Adds the actual name from Prodcut object
             item["total_price"] = Decimal(item["price"]) * item["qty"]
             yield item
 

@@ -12,6 +12,7 @@
 
     <form action="{% url 'cart:add' product.id %}" method="post"> <!--Use POST because we are modifying data.-->
         {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.path }}"> <!--hidden doesn't appear on page but will submit to form, request.path fill in current page path-->
         <label>Size:</label>
         <select name="size">
             <option value="XS">XS</option>
@@ -20,7 +21,7 @@
             <option value="L">L</option>
             <option value="XL">XL</option>
         </select>
-        <button>Add to Cart</button>
+        <button type="submit">Add to Cart</button> <!--Submit sends form data to form action-->
     </form>
 </article>
 {% endblock %}
