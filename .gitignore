@@ -36,3 +36,6 @@ htmlcov/
 .idea/
 .ropeproject/
 .DS_Store
+
+db.sqlite3
+
