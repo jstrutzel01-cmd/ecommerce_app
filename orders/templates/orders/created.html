@@ -4,15 +4,6 @@
 <h2>Checkout</h2>
 <form action = "{% url 'orders:create' %}" method="post">
   {% csrf_token %}
-  {% if form.errors %}
-  <ul>
-    {% for field in form %}
-      {% for error in field.errors %}
-        <li><strong>{{ field.label }}:</strong> {{ error }}</li>
-      {% endfor %}
-    {% endfor %}
-  </ul>
-{% endif %}
   {{ form.as_p }}
   <p>Total: ${{ cart.get_total_price }}</p>
   <button type="submit">Place order</button>

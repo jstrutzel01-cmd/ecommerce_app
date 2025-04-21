@@ -28,5 +28,8 @@
     {% endfor %}
   </table>
   <p><strong>Total:&nbsp;${{ cart.get_total_price }}</strong></p>
+  {% if cart|length %}
+   <p><a href="{% url 'orders:create' %}">Proceed to checkout »</a></p>
+  {% endif %}
 {% endif %}
 {% endblock %}
