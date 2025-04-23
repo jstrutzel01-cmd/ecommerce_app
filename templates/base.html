@@ -9,8 +9,6 @@
 <body>
   <header>
     <h1><a href="{% url 'home' %}">Fashion Shop</a></h1>
-
-    <!-- category menu will be filled by a context‑processor in step 2 -->
     <nav>
       {% for cat in categories %}
         <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
