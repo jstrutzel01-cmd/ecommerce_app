@@ -15,6 +15,10 @@
       {% for cat in categories %}
         <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
       {% endfor %}
+      <form action="{% url 'product_list' %}" method="get" style="display:inline;">
+        <input type ="text" name="q" placeholder="Search..." value="{{ q|default:'' }}">
+        <button>🔍</button>
+      </form>
       <a href="{% url 'cart:detail' %}">Cart ({{ cart|length }})</a>
     </nav>
   </header>

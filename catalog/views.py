@@ -13,10 +13,10 @@ def product_list(request, category_slug=None):
         products = products.filter(category=category)
     
     # Keywords search
-    q = request.get("q") # Whatever user searches for gets stored in q for the following if statement
+    q = request.GET.get("q") # Whatever user searches for gets stored in q for the following if statement
     if q:
         products = products.filter(
-            Q(name_icontains=q) | Q(description_icontains=q) # name_icontains is from Django's Q, it is a case insensitve lookup
+            Q(name__icontains=q) | Q(description__icontains=q) # name__icontains is from Django's Q, it is a case insensitve lookup
         )
 
     paginator = Paginator(products, 8) #Creates paginator from product list to only show 8 per page
@@ -30,7 +30,6 @@ def product_list(request, category_slug=None):
     }
 
     return render(request, "catalog/product_list.html", context) # Sends html template the products and the current category
-                  
 
 
 def product_detail(request, id, slug):
