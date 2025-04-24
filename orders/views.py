@@ -2,13 +2,9 @@ from django.shortcuts import render, redirect
 from cart.cart import Cart
 from .models import OrderItem
 from .forms import OrderCreateForm
+from django.contrib.auth.decorators import login_required
 
-
-from django.shortcuts import render, redirect
-from cart.cart import Cart
-from .models import OrderItem
-from .forms import OrderCreateForm
-
+@login_required
 def order_create(request):
     cart = Cart(request)
     if request.method == "POST": # Checks if form was submitted
