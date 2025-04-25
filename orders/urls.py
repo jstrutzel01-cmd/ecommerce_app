@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import OrderHistoryView
 
 app_name = "orders" # Lets us use {% 'orders:create' %}
 urlpatterns = [
