@@ -3,6 +3,7 @@ from cart.cart import Cart
 from .models import OrderItem
 from .forms import OrderCreateForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 @login_required
 def order_create(request):
@@ -30,3 +31,16 @@ def order_create(request):
         form = OrderCreateForm()
     return render(request, "orders/create.html", {"cart": cart, "form": form})
 
+
+
+class OrderHistory(ListView):
+    model = Order #Tell WHAT data will be listed
+    template_name = "orders/history.html" #What is being rendered
+    context = "orders"
+
+    def get_queryset(self):         # Shows only the orders by the logged in user in descending order
+        return (Order.objects
+                .filter(user=self.request.user)
+                .order_by("-created_at"))
+    
+    order_history = login_required(OrderHistoryView.as_view()) # Prevents non logged in user from accessing and redirection to login. Use this for classes
