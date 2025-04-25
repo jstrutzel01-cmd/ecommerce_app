@@ -3,8 +3,11 @@
 {% block title %}Home | Ecommerce App{% endblock %}
 
 {% block content %}
-<section style="text-align:center;">
-  <h2>New Spring Collection</h2>
-  <p><a href="{% url 'product_list' %}">Browse all products →</a></p>
+<section class="banner">
+  <div class="banner-content">
+    <h2>New Spring Collection 🌸</h2>
+    <p>Fresh styles for a fresh season. Browse our latest arrivals!</p>
+    <a href="{% url 'product_list' %}" class="btn">Shop Now →</a>
+  </div>
 </section>
 {% endblock %}
