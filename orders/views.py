@@ -11,6 +11,8 @@ def order_create(request):
         form = OrderCreateForm(request.POST) # Puts form data into form variable
         if form.is_valid(): # Checks if input fields and were filled
             print(" Form is valid")
+            order = form.save()
+            order.user = request.user
             order = form.save() # Now that form is valid store it into an order object
             for item in cart: # From __iter__() in Cart class, Loop through each item in Cart
                 OrderItem.objects.create(
