@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>{% block title %}Fashion Shop{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
   <header>
@@ -27,12 +29,17 @@
         {% if user.is_authenticated %}
           Hi, {{ user.username }}!
           <a href="{% url 'orders:history' %}">My orders</a>
-          <a href="{% url 'logout' %}?next={{ request.path }}">Log out</a>
+          <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button style="background:none; border:none; color:#0e7c7b; cursor:pointer; font:inherit;
+            padding:0; margin:0;">Log out</button>
+          </form>
         {% else %}
           <a href="{% url 'login' %}?next={{ request.path }}">Log in</a>
         {% endif %}
         <a href="{% url 'cart:detail' %}">
-          Cart <span class="badge">{{ cart|length }}</span>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge">{{ cart|length }}</span>
         </a>
       </div>
     </div>

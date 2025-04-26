@@ -5,17 +5,22 @@
 <h2>{% if category %}{{ category.name }}{% else %}All Products{% endif %}</h2>
 
 <div class="grid">
-  {% for product in products %}
-    <div class="card">
-      <img src="{{ product.image.url }}" alt="{{ product.name }}">
-      <div class="card-body">
-        <h3>{{ product.name }}</h3>
-        <p>${{ product.price }}</p>
-        <a href="{{ product.get_absolute_url }}" class="btn">View</a>
+    {% for product in products %}
+      <div class="card">
+        <a href="{{ product.get_absolute_url }}">
+          <div class="card-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <div class="overlay">
+            </div>
+          </div>
+        </a>
+        <div class="card-body">
+          <h3>{{ product.name }}</h3>
+          <p>${{ product.price }}</p>
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
 
 <div class="pagination">
   {% if products.has_previous %}
