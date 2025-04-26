@@ -21,9 +21,8 @@ body {
     padding: 0 16px;     /* a little breathing room at the edges */
   }
 
-  #btn{
+  .btn a{
     background: none;
-    text-decoration: none;
   }
 
   /* ---------- header + nav ---------- */
