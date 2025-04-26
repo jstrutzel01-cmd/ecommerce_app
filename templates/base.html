@@ -2,6 +2,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
+  {% block extra_css %} {% endblock %}
+    
   <meta charset="utf-8">
   <title>{% block title %}Fashion Shop{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
