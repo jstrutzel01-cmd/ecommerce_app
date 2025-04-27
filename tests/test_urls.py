@@ -41,5 +41,5 @@ class TestUrls(SimpleTestCase):
         self.assertEqual(resolve(url).func, order_create)
         print("------------Success!------------ \n")
         
-
+   
 
