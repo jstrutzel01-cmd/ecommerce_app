@@ -3,7 +3,14 @@
 ### Fashion Project App: Fashion Shop
 
 ---
+
+## Project Overiew
+Fashion Shop is a modern e-commerce website built with Django.  
+It allows users to browse fashion products by category, search for specific items, add products to a shopping cart, and manage their orders.  
+The platform is simple, responsive, and provides user authentication, password reset, and order history tracking.
+
 **Product Vision :** To create a new website to sell different fashion products of multiple variants that will be sold online on personal website as well as be distributed to big name stores as well in order to maximize profits and popularity
+
 ---
 **Functional Requirements:**
 
@@ -82,4 +89,37 @@
 
 **Diagram**
 
-![fashionshopdiagram.png](https://github.com/jstrutzel01-cmd/ecommerce_app/blob/main/fashionshopdiagram.png)
+![Fashion Shop Diagram](static/images/fashionshopdiagram.png)
+
+## 🛠️ Quick Start Instructions
+
+Clone the repository, create a virtual environment, install dependencies, migrate the database, and run the server:
+
+```bash
+1. Clone repository:
+git clone https://github.com/your-username/ecommerce_app.git
+
+2. Change directory to application: 
+cd ecommerce_app
+
+3. Create virtual environment: 
+python3 -m venv venv
+
+4. Activate virual environment:
+source venv/bin/activate  # On Linux/Mac
+venv\Scripts\activate     # On Windows
+
+5. Install dependecies:
+pip install -r requirements.txt
+
+6. Build DB models:
+python manage.py migrate
+
+7. Load data into models: 
+python manage.py loaddata initial_data.json 
+
+8. Create admin account:
+python manage.py createsuperuser             # (Optional) Create admin account
+
+9. Run project:
+python manage.py runserver
