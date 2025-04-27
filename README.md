@@ -79,3 +79,7 @@
 
 - **Integrate secure payment methods:**  
   The website should support and integrate secure payment gateways, such as credit card processing or PayPal, ensuring user transactions are encrypted and protected.
+
+**Diagram**
+
+![fashionshopdiagram.png](https://github.com/jstrutzel01-cmd/ecommerce_app/blob/main/fashionshopdiagram.png)
