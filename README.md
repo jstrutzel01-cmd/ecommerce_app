@@ -17,6 +17,10 @@ The platform is simple, responsive, and provides user authentication, password r
 
 ---
 
+## Project Youtube Video: 
+https://youtu.be/ghaG70y7IFE
+
+
 
 
 # **Functional Requirements:**
