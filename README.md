@@ -4,6 +4,10 @@
 
 ---
 
+**GitHub Repository:** [https://github.com/jstrutzel01-cmd/ecommerce_app](https://github.com/jstrutzel01-cmd/ecommerce_app)
+
+---
+
 ## Project Overiew
 Fashion Shop is a modern e-commerce website built with Django.  
 It allows users to browse fashion products by category, search for specific items, add products to a shopping cart, and manage their orders.  
