@@ -16,7 +16,10 @@ The platform is simple, responsive, and provides user authentication, password r
 **Product Vision :** To create a new website to sell different fashion products of multiple variants that will be sold online on personal website as well as be distributed to big name stores as well in order to maximize profits and popularity
 
 ---
-**Functional Requirements:**
+
+
+
+# **Functional Requirements:**
 
 |       |          |
 | ----- | -------- |
@@ -72,28 +75,51 @@ The platform is simple, responsive, and provides user authentication, password r
 | Name: | About and Contact Information Page |
 | Description: | Displays company description and legal contact information <br> Can go to the homepage |
 
-**Non-Functional Requirements:**
-- **Able to serve up to 10,000 people simultaneously:**  
-  The website must be capable of handling a large volume of concurrent users without significant performance degradation, ensuring smooth access for up to 10,000 users at once.
 
-- **Respond within 1 second to each user:**  
-  The website should have minimal latency, providing a fast and responsive experience for users with page load times under 1 second.
 
-- **Comply with legality for websites in US, Canada, and UN:**  
-  The website must adhere to all relevant laws and regulations for privacy, data security, and commerce in the US, Canada, and under UN guidelines.
+# **Non-Functional Requirements**
 
-- **Should resist basic cybersecurity attacks:**  
-  The website must implement security measures to protect against common cyber threats, including but not limited to SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-01   |
+| Name: | High Concurrent Users |
+| Description: | The website must be capable of handling a large volume of concurrent users without significant performance degradation, ensuring smooth access for up to 10,000 users at once. |
 
-- **The website should be available in US, Canada, and UN whenever possible:**  
-  The website should be accessible from regions within the US, Canada, and UN member countries, ensuring broad geographical availability.
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-02   |
+| Name: | Fast Response Time |
+| Description: | The website should have minimal latency, providing a fast and responsive experience for users with page load times under 1 second. |
 
-- **Integrate secure payment methods:**  
-  The website should support and integrate secure payment gateways, such as credit card processing or PayPal, ensuring user transactions are encrypted and protected.
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-03   |
+| Name: | Legal Compliance |
+| Description: | The website must adhere to all relevant laws and regulations for privacy, data security, and commerce in the US, Canada, and under UN guidelines. |
+
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-04   |
+| Name: | Cybersecurity Defense |
+| Description: | The website must implement security measures to protect against common cyber threats, including but not limited to SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). |
+
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-05   |
+| Name: | Global Availability |
+| Description: | The website should be accessible from regions within the US, Canada, and UN member countries, ensuring broad geographical availability. |
+
+|       |          |
+| ----- | -------- |
+| ID:   | NFR-06   |
+| Name: | Secure Payment Integration |
+| Description: | The website should support and integrate secure payment gateways, such as credit card processing or PayPal, ensuring user transactions are encrypted and protected. |
+
 
 **Diagram**
 
 ![Fashion Shop Diagram](static/images/fashionshopdiagram.png)
+
 
 ## 🛠️ Quick Start Instructions
 
