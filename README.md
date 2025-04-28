@@ -127,7 +127,7 @@ Clone the repository, create a virtual environment, install dependencies, migrat
 
 ```bash
 1. Clone repository:
-git clone https://github.com/your-username/ecommerce_app.git
+git clone https://github.com/jstrutzel01-cmd/ecommerce_app.git
 
 2. Change directory to application: 
 cd ecommerce_app
