@@ -9,7 +9,11 @@
       <div class="card">
         <a href="{{ product.get_absolute_url }}">
           <div class="card-image">
+          {% if product.image %}  
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% else %}
+            <img src="/static/images/default.jpg" alt="No Image Available">
+          {% endif %}
             <div class="overlay">
             </div>
           </div>
